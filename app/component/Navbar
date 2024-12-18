@@ -1,0 +1,132 @@
+import { BookKey, Box, Building2, ChevronDown, ClipboardPen, Code, FoldVertical, History, House, Layers, Megaphone, Menu, NotebookTabs, Phone, Pin, ReceiptText, Rocket, ScrollText, User, Users } from 'lucide-react'
+import Link from 'next/link'
+import React from 'react'
+
+const NavBar = () => {
+  return (
+    <div className='w-[10%] h-full flex flex-col py-2 px-3 bg-[#EFEFEF] gap-2'>
+      <Menu className='text-gray-600'/>
+<div className=' flex flex-col gap-5 w-full'>
+        <div className=' grid grid-cols-1 w-full gap-3  '>
+        <div className='flex flex-row gap-4 '>
+        <House className='text-gray-600 ' />
+        <h2 className='text-gray-600 font-medium'>Home</h2>
+        </div>
+
+        <div className='flex flex-row justify-between '> 
+        <div className='flex flex-row gap-4 justify-start'>
+        <History className='text-gray-600 ' />
+        <Link href="/recent" className='text-gray-600 font-medium'>Recent</Link>
+        </div >
+        <ChevronDown  className='justify-end text-gray-600 '/>
+        </div>
+
+        <div className='flex flex-row justify-between '> 
+        <div className='flex flex-row gap-4 justify-start'>
+        <Pin  className='text-gray-600 ' />
+        <Link href="/recent" className='text-gray-600 font-medium'>Pinned</Link>
+        </div >
+        <ChevronDown  className='justify-end text-gray-600 '/>
+        </div>
+
+
+        </div>
+
+        <div  className=' grid grid-cols-1 w-full gap-3 '>
+        <h2 className='text-gray-600'>My Work</h2>
+        <div className='flex flex-row gap-4'>
+        <Rocket  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Sales accelerator</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <FoldVertical  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Dashboard</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <ClipboardPen  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Activites</h2>
+        </div>
+        </div>
+
+        <div  className=' grid grid-cols-1 w-full gap-3 '>
+        <h2 className='text-gray-600'>Customers</h2>
+        <div className='flex flex-row gap-4'>
+        <Layers  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Accounts</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <User  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Contact</h2>
+        </div>
+        </div>
+
+        <div  className=' grid grid-cols-1 w-full gap-3 '>
+        <h2 className='text-gray-600'>Sales</h2>
+        <div className='flex flex-row gap-4  active:bg-white '>
+        <Phone  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Leads</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <NotebookTabs  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Opportunites</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <Users  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Competitors</h2>
+        </div>
+        </div>
+
+        <div  className=' grid grid-cols-1 w-full gap-3 '>
+        <h2 className='text-gray-600'>Collateral</h2>
+        <div className='flex flex-row gap-4  active:bg-white '>
+        <BookKey  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Qoutes</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <ScrollText  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Orders</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <ReceiptText  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Invoices</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <Box  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Products</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <Building2  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Sales Literature</h2>
+        </div>
+        </div>
+
+        <div  className=' grid grid-cols-1 w-full gap-3 '>
+        <h2 className='text-gray-600'>Marketing</h2>
+        <div className='flex flex-row gap-4'>
+        <Megaphone  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Marketing lists</h2>
+        </div>
+        <div className='flex flex-row gap-4'>
+        <Megaphone  className='text-gray-600 ' />
+        <h2 className='text-gray-600 text-sm font-medium'>Quick Campaings</h2>
+        </div>
+        </div>
+
+
+        <div  className=' grid grid-cols-1 w-full gap-3 '>
+        <h2 className='text-gray-600'>Performance</h2>
+        <div className='flex flex-row justify-between '> 
+        <div className='flex flex-row gap-4 justify-start'>
+        <div className='bg-purple-600 text-gray-200 w-[30px] h-[30px] flex justify-center items-center'>S</div>
+        <Link href="/recent" className='text-gray-600 font-medium'>Sales</Link>
+        </div >
+        <Code  className='justify-end text-gray-600 '/>
+        </div>
+
+        </div>
+</div>
+    </div>
+  )
+}
+
+export default NavBar
