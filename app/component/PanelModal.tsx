@@ -69,7 +69,7 @@ const PanelModal: React.FC<PanelModalProps> = ({ selectedSlide, closeModal }) =>
 
               <div className="flex flex-col xl:gap-5 ">
                 <div className="h-auto border shadow-lg rounded-md p-4 flex items-center gap-3">
-                  <Image src="/profile.png" width={50} height={46} alt="profile" className="rounded-full" />
+                  <Image src="/profile.PNG" width={50} height={46} alt="profile" className="rounded-full" />
                   <div>
                     <h2 className="text-base lg:text-lg font-semibold text-gray-800">Jane Reyes</h2>
                     <div className="flex gap-3">
@@ -239,7 +239,7 @@ const PanelModal: React.FC<PanelModalProps> = ({ selectedSlide, closeModal }) =>
 
               <div className="flex flex-col xl:gap-5 ">
                 <div className="h-auto border shadow-lg rounded-md p-4 flex items-center gap-3">
-                  <Image src="/profile.png" width={50} height={46} alt="profile" className="rounded-full" />
+                  <Image src="/profile.PNG" width={50} height={46} alt="profile" className="rounded-full" />
                   <div>
                     <h2 className="text-base lg:text-lg font-semibold text-gray-800">Jane Reyes</h2>
                     <div className="flex gap-3">
@@ -410,7 +410,7 @@ const PanelModal: React.FC<PanelModalProps> = ({ selectedSlide, closeModal }) =>
 
               <div className="flex flex-col xl:gap-5 ">
                 <div className="h-auto border shadow-lg rounded-md p-4 flex items-center gap-3">
-                  <Image src="/profile.png" width={50} height={46} alt="profile" className="rounded-full" />
+                  <Image src="/profile.PNG" width={50} height={46} alt="profile" className="rounded-full" />
                   <div>
                     <h2 className="text-base lg:text-lg font-semibold text-gray-800">Jane Reyes</h2>
                     <div className="flex gap-3">
