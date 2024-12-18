@@ -14,18 +14,17 @@ import PanelModal from './PanelModal';
 
 const Panel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedSlide, setSelectedSlide] = useState(null); 
+  const [selectedSlide, setSelectedSlide] = useState<string | null>(null);
 
-  const handleSlideClick = (slide:  React.SetStateAction<null>) => {
+  const handleSlideClick = (slide: string) => {
     setSelectedSlide(slide); 
-    setIsModalOpen(true); 
+    setIsModalOpen(true);
   };
 
   const closeModal = () => {
-    setIsModalOpen(false); 
+    setIsModalOpen(false);
     setSelectedSlide(null); 
   };
-
   return (
     <div className='w-full  border-2 rounded-2xl xl:h-[470px] shadow-2xl p-[3px] bg-gradient-to-r from-blue-800 via-blue-500 to-purple-500 '>
       <div className='w-[100%] bg-white text-gray-600 h-full rounded-2xl px-3 py-4 flex flex-col'>
