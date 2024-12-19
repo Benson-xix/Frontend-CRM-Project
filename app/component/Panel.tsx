@@ -72,13 +72,7 @@ const Panel = () => {
                 <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
-                      <Image
-                        src="/profile.PNG"
-                        alt="Jane Reyes"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
+  <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
                       <div>
                         <h3 className="font-semibold text-gray-900">
                           Jane Reyes
@@ -110,13 +104,7 @@ const Panel = () => {
                 <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
-                      <Image
-                        src="/profile.PNG"
-                        alt="Allan Munger"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
+                      <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
                       <div>
                         <h3 className="font-semibold text-gray-900">
                           Allan Munger
@@ -147,13 +135,7 @@ const Panel = () => {
                 <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
-                      <Image
-                        src="/profile.PNG"
-                        alt="Allan Munger"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
+                           <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
                       <div>
                         <h3 className="font-semibold text-gray-900">
                           Allan Munger
@@ -184,13 +166,7 @@ const Panel = () => {
                 <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
-                      <Image
-                        src="/profile.PNG"
-                        alt="Allan Munger"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
+                       <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
                       <div>
                         <h3 className="font-semibold text-gray-900">
                           Allan Munger
@@ -221,13 +197,7 @@ const Panel = () => {
                 <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
-                      <Image
-                        src="/profile.PNG"
-                        alt="Allan Munger"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
+                       <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
                       <div>
                         <h3 className="font-semibold text-gray-900">
                           Allan Munger
