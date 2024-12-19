@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ChevronDown, MoveDown } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -27,57 +27,84 @@ const PanelTable = () => {
       row.status.toLowerCase().includes(search.toLowerCase())
   );
 
+  
+  const clearSearch = () => {
+    setSearch("");
+  };
+
   return (
     <div className="p-4 text-gray-600 border-2 rounded-md shadow-md">
-  
+     
       <div className="mb-4">
-      <div className="relative w-1/3">
- 
-  <input
-    type="text"
-    placeholder="Sort, filter and search with copilot"
-    value={search}
-    onChange={(e) => setSearch(e.target.value)}
-    className="w-full p-2 pl-2 border border-blue-300 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
-  />
-
-
-  <Image
-    src="/logo.png"
-    width={33}
-     height={26}
-    alt="Search"
-    className="absolute right-3 top-2.5 w-5 h-5 text-gray-400"
-  />
-</div>
+        <div className="relative w-1/3">
+          <input
+            type="text"
+            placeholder="Sort, filter and search with copilot"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full p-2 pl-2 border border-blue-300 rounded-md focus:outline-none focus:ring focus:ring-blue-400"
+          />
+          
+          {search && (
+            <button
+              onClick={clearSearch}
+              className="absolute right-12 top-2.5 text-gray-400"
+            >
+              X
+            </button>
+          )}
+          <Image
+            src="/logo.png"
+            width={33}
+            height={26}
+            alt="Search"
+            className="absolute right-3 top-2.5 w-5 h-5 text-gray-400"
+          />
+        </div>
       </div>
 
-    
+   
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200 rounded-md shadow-sm">
           <thead>
             <tr className="text-left bg-gray-50">
-            <th className="p-3 border-b border-gray-300"></th>
-              <th className="p-3 border-b  border-gray-300"><div className="flex items-center">Name <ChevronDown className='w-4 h-4 ' /> </div></th>
-              <th className="p-3 border-b border-gray-300"><div className="flex items-center">Topic <ChevronDown className='w-4 h-4 ' /> </div></th>
-              <th className="p-3 border-b border-gray-300"><div className="flex items-center">Status reason <ChevronDown className='w-4 h-4 ' /> </div></th>
-              <th className="p-3 border-b border-gray-300"><div className="flex items-center">Created on  <MoveDown strokeWidth={3} className='w-4 h-4 ' /> <ChevronDown className='w-4 h-4 ' /> </div></th>
+              <th className="p-3 border-b border-gray-300"></th>
+              <th className="p-3 border-b border-gray-300">
+                <div className="flex items-center">
+                  Name <ChevronDown className="w-4 h-4" />
+                </div>
+              </th>
+              <th className="p-3 border-b border-gray-300">
+                <div className="flex items-center">
+                  Topic <ChevronDown className="w-4 h-4" />
+                </div>
+              </th>
+              <th className="p-3 border-b border-gray-300">
+                <div className="flex items-center">
+                  Status reason <ChevronDown className="w-4 h-4" />
+                </div>
+              </th>
+              <th className="p-3 border-b border-gray-300">
+                <div className="flex items-center">
+                  Created on <MoveDown strokeWidth={3} className="w-4 h-4" /> <ChevronDown className="w-4 h-4" />
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
             {filteredData.map((row, index) => (
               <tr key={index} className="hover:bg-gray-50 transition">
-              <td className="p-3 border-b border-gray-300">
-                <input
-                  type="checkbox"
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-                />
-              </td>
-              <td className="p-3 border-b text-blue-500 border-gray-300">{row.name}</td>
-              <td className="p-3 border-b border-gray-300">{row.topic}</td>
-              <td className="p-3 border-b border-gray-300">{row.status}</td>
-              <td className="p-3 border-b border-gray-300">{row.created}</td>
-            </tr>
+                <td className="p-3 border-b border-gray-300">
+                  <input
+                    type="checkbox"
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                </td>
+                <td className="p-3 border-b text-blue-500 border-gray-300">{row.name}</td>
+                <td className="p-3 border-b border-gray-300">{row.topic}</td>
+                <td className="p-3 border-b border-gray-300">{row.status}</td>
+                <td className="p-3 border-b border-gray-300">{row.created}</td>
+              </tr>
             ))}
           </tbody>
         </table>
