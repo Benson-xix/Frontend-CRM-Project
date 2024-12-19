@@ -69,161 +69,191 @@ const Panel = () => {
                 className="w-full"
               >
               
-                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
-                  <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
-                    <div className="flex items-center gap-2">
-  <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">
-                          Jane Reyes
-                        </h3>
-                        <p className="md:text-sm text-xs text-gray-500">
-                          COO • Northwind Traders
-                        </p>
-                      </div>
-                    </div>
-                    <div className='bg-blue-100 px-2 py-3 rounded-lg'>
-                    <div className='flex gap-2 items-center '>
-                    <Mail  className='w-4 h-4 '/>
-                      <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
-                        Engage with Jane Reyes
-                      </h4>
-                    </div>
-                      <p className="md:text-sm text-xs text-gray-600">
-                        Jane may be interested in upgrading espresso machines
-                        for her in-store coffee shops.
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-2">
-                      Expand business • High buying intent
+               <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
+              <div
+                className="relative group h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between"
+              >
+                <div className="flex items-center gap-2">
+                <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Jane Reyes</h3>
+                    <p className="md:text-sm text-xs text-gray-500">
+                      COO • Northwind Traders
                     </p>
                   </div>
-                </SwiperSlide>
+                </div>
+                <div className="bg-blue-100 px-2 py-3 rounded-lg">
+                  <div className="flex gap-2 items-center">
+                    <Mail className="w-4 h-4" />
+                    <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
+                      Engage with Jane Reyes
+                    </h4>
+                  </div>
+                  <p className="md:text-sm text-xs text-gray-600">
+                    Jane may be interested in upgrading espresso machines for her in-store coffee shops.
+                  </p>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  Expand business • High buying intent
+                </p>
+
+              
+                <div
+                  className="absolute hidden group-hover:block  left-1/2 transform -translate-x-1/2 mb-2 w-max bg-black text-white text-xs rounded px-2 py-1 shadow-lg"
+                >
+                  High buying intent: Upgrade espresso machines
+                </div>
+              </div>
+          </SwiperSlide>
+
+            <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
+              <div
+                className="relative group h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between"
+              >
+                <div className="flex items-center gap-2">
+                <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Allan Munger</h3>
+                    <p className="md:text-sm text-xs text-gray-500">
+                      Head of Real Estate • Contoso Coffee
+                    </p>
+                  </div>
+                </div>
+                <div className="bg-blue-100 px-2 py-3 rounded-lg">
+                  <div className="flex gap-2 items-center">
+                    <CalendarDays className="w-4 h-4" />
+                    <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
+                      Prepare for meeting with Allan
+                    </h4>
+                  </div>
+                  <p className="md:text-sm text-xs text-gray-600">
+                    Prepare for a high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading the service contract.
+                  </p>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  Upcoming meeting • Due today
+                </p>
 
                 
-                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
-                  <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
-                    <div className="flex items-center gap-2">
-                      <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">
-                          Allan Munger
-                        </h3>
-                        <p className="md:text-sm text-xs  text-gray-500">
-                          Head of Real Estate • Contoso Coffee
-                        </p>
-                      </div>
-                    </div>
-                    <div className='bg-blue-100 px-2 py-3 rounded-lg'>
-                    <div className='flex gap-2 items-center '>
-                    <CalendarDays   className='w-4 h-4 '/>
-                      <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
-                        Prepare for meeting with Allan
-                      </h4>
-                      </div>
-                      <p className="md:text-sm text-xs text-gray-600">
-                        Prepare for high-buying intent meeting Copilot scheduled
-                        for 2 PM regarding upgrading service contract.
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-2">
-                      Upcoming meeting • Due today
-                    </p>
-                  </div>
-                </SwiperSlide>
+                <div
+                  className="absolute hidden group-hover:block bottom left-1/2 transform -translate-x-1/2 mb-2 w-max bg-black text-white text-xs rounded px-2 py-1 shadow-lg"
+                >
+                  Meeting at 2 PM: Upgrade service contract
+                </div>
+              </div>
+            </SwiperSlide>
 
-                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
-                  <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
-                    <div className="flex items-center gap-2">
-                           <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">
-                          Allan Munger
-                        </h3>
-                        <p className="md:text-sm text-xs  text-gray-500">
-                          Head of Real Estate • Contoso Coffee
-                        </p>
-                      </div>
-                    </div>
-                    <div className='bg-blue-100 px-2 py-3 rounded-lg'>
-                    <div className='flex gap-2 items-center '>
-                    <CalendarDays   className='w-4 h-4 '/>
-                      <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
-                        Prepare for meeting with Allan
-                      </h4>
-                      </div>
-                      <p className="md:text-sm text-xs text-gray-600">
-                        Prepare for high-buying intent meeting Copilot scheduled
-                        for 2 PM regarding upgrading service contract.
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-2">
-                      Upcoming meeting • Due today
-                    </p>
-                  </div>
-                </SwiperSlide>
 
-                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
-                  <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
-                    <div className="flex items-center gap-2">
-                       <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">
-                          Allan Munger
-                        </h3>
-                        <p className="md:text-sm text-xs  text-gray-500">
-                          Head of Real Estate • Contoso Coffee
-                        </p>
-                      </div>
-                    </div>
-                    <div className='bg-blue-100 px-2 py-3 rounded-lg'>
-                    <div className='flex gap-2 items-center '>
-                    <CalendarDays   className='w-4 h-4 '/>
-                      <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
-                        Prepare for meeting with Allan
-                      </h4>
-                      </div>
-                      <p className="md:text-sm text-xs text-gray-600">
-                        Prepare for high-buying intent meeting Copilot scheduled
-                        for 2 PM regarding upgrading service contract.
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-2">
-                      Upcoming meeting • Due today
+            <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
+              <div
+                className="relative group h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between"
+              >
+                <div className="flex items-center gap-2">
+                <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Jane Reyes</h3>
+                    <p className="md:text-sm text-xs text-gray-500">
+                      COO • Northwind Traders
                     </p>
                   </div>
-                </SwiperSlide>
+                </div>
+                <div className="bg-blue-100 px-2 py-3 rounded-lg">
+                  <div className="flex gap-2 items-center">
+                    <Mail className="w-4 h-4" />
+                    <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
+                      Engage with Jane Reyes
+                    </h4>
+                  </div>
+                  <p className="md:text-sm text-xs text-gray-600">
+                    Jane may be interested in upgrading espresso machines for her in-store coffee shops.
+                  </p>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  Expand business • High buying intent
+                </p>
+
+              
+                <div
+                  className="absolute hidden group-hover:block  left-1/2 transform -translate-x-1/2 mb-2 w-max bg-black text-white text-xs rounded px-2 py-1 shadow-lg"
+                >
+                  High buying intent: Upgrade espresso machines
+                </div>
+              </div>
+          </SwiperSlide>
+
+            <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
+              <div
+                className="relative group h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between"
+              >
+                <div className="flex items-center gap-2">
+                <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Allan Munger</h3>
+                    <p className="md:text-sm text-xs text-gray-500">
+                      Head of Real Estate • Contoso Coffee
+                    </p>
+                  </div>
+                </div>
+                <div className="bg-blue-100 px-2 py-3 rounded-lg">
+                  <div className="flex gap-2 items-center">
+                    <CalendarDays className="w-4 h-4" />
+                    <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
+                      Prepare for meeting with Allan
+                    </h4>
+                  </div>
+                  <p className="md:text-sm text-xs text-gray-600">
+                    Prepare for a high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading the service contract.
+                  </p>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  Upcoming meeting • Due today
+                </p>
+
                 
-                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
-                  <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
-                    <div className="flex items-center gap-2">
-                       <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
-                      <div>
-                        <h3 className="font-semibold text-gray-900">
-                          Allan Munger
-                        </h3>
-                        <p className="md:text-sm text-xs  text-gray-500">
-                          Head of Real Estate • Contoso Coffee
-                        </p>
-                      </div>
-                    </div>
-                    <div className='bg-blue-100 px-2 py-3 rounded-lg'>
-                    <div className='flex gap-2 items-center '>
-                    <CalendarDays   className='w-4 h-4 '/>
-                      <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
-                        Prepare for meeting with Allan
-                      </h4>
-                      </div>
-                      <p className="md:text-sm text-xs text-gray-600">
-                        Prepare for high-buying intent meeting Copilot scheduled
-                        for 2 PM regarding upgrading service contract.
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-2">
-                      Upcoming meeting • Due today
+                <div
+                  className="absolute hidden group-hover:block bottom left-1/2 transform -translate-x-1/2 mb-2 w-max bg-black text-white text-xs rounded px-2 py-1 shadow-lg"
+                >
+                  Meeting at 2 PM: Upgrade service contract
+                </div>
+              </div>
+            </SwiperSlide>
+                
+            <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
+              <div
+                className="relative group h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between"
+              >
+                <div className="flex items-center gap-2">
+                <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
+                  <div>
+                    <h3 className="font-semibold text-gray-900">Jane Reyes</h3>
+                    <p className="md:text-sm text-xs text-gray-500">
+                      COO • Northwind Traders
                     </p>
                   </div>
-                </SwiperSlide>
+                </div>
+                <div className="bg-blue-100 px-2 py-3 rounded-lg">
+                  <div className="flex gap-2 items-center">
+                    <Mail className="w-4 h-4" />
+                    <h4 className="font-medium md:text-base text-xs text-gray-800 mb-1">
+                      Engage with Jane Reyes
+                    </h4>
+                  </div>
+                  <p className="md:text-sm text-xs text-gray-600">
+                    Jane may be interested in upgrading espresso machines for her in-store coffee shops.
+                  </p>
+                </div>
+                <p className="text-xs text-gray-500 mt-2">
+                  Expand business • High buying intent
+                </p>
+
+              
+                <div
+                  className="absolute hidden group-hover:block  left-1/2 transform -translate-x-1/2 mb-2 w-max bg-black text-white text-xs rounded px-2 py-1 shadow-lg"
+                >
+                  High buying intent: Upgrade espresso machines
+                </div>
+              </div>
+          </SwiperSlide>
               </Swiper>
 
                     </div>
