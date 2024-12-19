@@ -16,7 +16,7 @@ interface PanelModalProps {
 }
 
 const PanelModal: React.FC<PanelModalProps> = ({ selectedSlide, closeModal }) => {
-  const [activeButton, setActiveButton] = useState("Engage");
+  const [activeButton, setActiveButton] = useState("Research");
 
   const handleButtonClick = (buttonName: React.SetStateAction<string>) => {
     setActiveButton(buttonName);
