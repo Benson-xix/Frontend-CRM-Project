@@ -5,7 +5,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='w-full bg-[#00102A] h-[10%] sm:flex hidden justify-between '>
+    <div className='w-full bg-[#00102A] h-[10%] sm:flex hidden  justify-between '>
         <div className='w-1/3 gap-4 flex items-center  justify-start pl-2 py-2'>
         <Grip className='text-gray-400' />
         <p className='md:text-sm text-xs text-gray-400'>Dynamic 365</p>
