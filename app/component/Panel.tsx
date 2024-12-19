@@ -236,13 +236,13 @@ const Panel = () => {
 
                   <div className=' flex flex-col md:gap-3 gap-1 border-b-2 shadow-b-md w-full md:h-[100px] rounded-b-md '>
                   <div className="flex items-center gap-2 px-3">
-                     <div className='rounded-full px-2 py-2 bg-gray-500 mt-2 '>
+                      <div className='rounded-full px-2 py-2 bg-gray-300 mt-2 '>
                      <Image
                         src="/profile.PNG"
                         alt="Jane Reyes"
                         width={20}
     height={20}
- className="inline-block size-8 rounded-full ring-2 ring-white"
+ className="inline-block size-8 rounded-full ring-2 ring-white object-fill "
                       />
                      </div>
                       <div>
@@ -266,13 +266,13 @@ const Panel = () => {
 
                   <div className=' flex flex-col gap-3 border-b-2 shadow-b-md w-full md:h-[100px] rounded-b-md '>
                   <div className="flex items-center gap-2 px-3">
-                      <div className='rounded-full px-2 py-2 bg-gray-500 mt-2 '>
+                        <div className='rounded-full px-2 py-2 bg-gray-300 mt-2 '>
                      <Image
                         src="/profile.PNG"
                         alt="Jane Reyes"
                         width={20}
     height={20}
- className="inline-block size-8 rounded-full ring-2 ring-white"
+ className="inline-block size-8 rounded-full ring-2 ring-white object-fill "
                       />
                      </div>
                       <div>
