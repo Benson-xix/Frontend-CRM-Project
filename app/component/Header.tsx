@@ -20,7 +20,7 @@ const Header = () => {
         <CircleHelp className='text-gray-400 h-[18px]' />
         <MessagesSquare className='text-gray-400 h-[18px]' />
       <div>
-      <Image src="/profile.PNG" alt={'profile-Image'} width={30} height={30} className='rounded-full w-[50px] h-[30px]' ></Image>
+       <Image src="/profile.PNG" alt={'profile-Image'} width={20} height={20} className="inline-block size-8 rounded-full ring-2 ring-white" ></Image>
       </div>
         </div>
     </div>
