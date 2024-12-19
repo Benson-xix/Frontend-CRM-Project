@@ -107,7 +107,7 @@ const Panel = () => {
                 </SwiperSlide>
 
                 
-                <SwiperSlide>
+                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
                       <Image
@@ -144,7 +144,7 @@ const Panel = () => {
                   </div>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
                       <Image
@@ -181,7 +181,7 @@ const Panel = () => {
                   </div>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
                       <Image
@@ -218,7 +218,7 @@ const Panel = () => {
                   </div>
                 </SwiperSlide>
                 
-                <SwiperSlide>
+                <SwiperSlide onClick={() => handleSlideClick("Jane Reyes")}>
                   <div className="h-[250px] border-b-2 border-l-2 border-r-2 shadow-sm rounded-md p-4 flex flex-col justify-between">
                     <div className="flex items-center gap-2">
                       <Image
@@ -266,13 +266,13 @@ const Panel = () => {
 
                   <div className=' flex flex-col md:gap-3 gap-1 border-b-2 shadow-b-md w-full md:h-[100px] rounded-b-md '>
                   <div className="flex items-center gap-2 px-3">
-                     <div className='rounded-full px-2 py-2 bg-gray-500 mt-2 h-[50px]'>
+                     <div className='rounded-full px-2 py-2 bg-gray-500 mt-2 '>
                      <Image
                         src="/profile.PNG"
                         alt="Jane Reyes"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
+                        width={20}
+    height={20}
+ className="inline-block size-8 rounded-full ring-2 ring-white"
                       />
                      </div>
                       <div>
@@ -296,13 +296,13 @@ const Panel = () => {
 
                   <div className=' flex flex-col gap-3 border-b-2 shadow-b-md w-full md:h-[100px] rounded-b-md '>
                   <div className="flex items-center gap-2 px-3">
-                     <div className='rounded-full px-2 py-2 bg-gray-500 mt-2 h-[50px]'>
+                      <div className='rounded-full px-2 py-2 bg-gray-500 mt-2 '>
                      <Image
                         src="/profile.PNG"
                         alt="Jane Reyes"
-                        width={40}
-                        height={40}
-                        className="rounded-full"
+                        width={20}
+    height={20}
+ className="inline-block size-8 rounded-full ring-2 ring-white"
                       />
                      </div>
                       <div>
