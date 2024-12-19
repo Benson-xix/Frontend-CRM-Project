@@ -1,4 +1,4 @@
-import { ChevronUp, Copy, List, Menu, User, X } from "lucide-react";
+import { ChevronUp, Copy, FileText, History, List, Menu, User, X } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import EmailInputWithAvatar from "./EmailInputWithAvatar";
@@ -43,7 +43,7 @@ const AgentModal: React.FC<AgentModalProps> = ({ closeModal }) => {
               <p className="text-gray-700 flex items-center font-medium  h-full md:text-lg text-xs ">
               
                 <span className="inline-flex items-center lg:text-base text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-lg mx-1">
-                  <List className="md:flex hidden" />
+                  <FileText className="md:flex hidden" />
                   confirmed purchase orders
                 </span>
                 , check if the resulting
@@ -66,12 +66,12 @@ const AgentModal: React.FC<AgentModalProps> = ({ closeModal }) => {
               <p className="text-gray-700 flex items-center font-medium  h-full md:text-lg text-xs ">
                
                 <span className="inline-flex  items-center lg:text-base text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-lg mx-1">
-                  <Copy className="md:flex hidden" />
+                  <History className="md:flex hidden" />
                   ship without delay
                 </span>
                 .
                 <span className="inline-flex  items-center lg:text-base text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-lg mx-1">
-                  <Copy className="md:flex hidden" />
+                  <History className="md:flex hidden" />
                   Update the purchase order
                 </span>{" "}
                 
