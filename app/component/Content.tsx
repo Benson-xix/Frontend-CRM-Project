@@ -17,6 +17,8 @@ import {
 import React, { useState } from 'react';
 import Panel from './Panel';
 import PanelTable from './PanelTable';
+
+import BarChart from './BarChart';
 import RibbonChart from './RibbonChart';
 
 const Content = () => {
@@ -53,27 +55,38 @@ const Content = () => {
         </button>
 
         <div className="flex flex-wrap gap-2 xl:justify-end text-sm items-center text-gray-600">
-          {[
+        {[
             { Icon: BookImage, label: "Show Chart", onClick: showRibbonChart },
-            { Icon: Logs, label: "Focused View", onClick: null },
+            { Icon: Logs, label: "Focused View", onClick: showPanel },
             { Icon: Plus, label: "New", onClick: null },
             { Icon: RotateCw, label: "Refresh", onClick: null },
             { Icon: Handshake, label: "Collaborate", onClick: null },
           ].map(({ Icon, label, onClick }, index) => (
-            <button
-              key={index}
+            <div key={index} className="relative group">
+              <button
               onClick={onClick || undefined}
               className="flex gap-2 items-center px-2 py-1 rounded-md hover:bg-gray-200 active:bg-gray-300 focus:ring-2 focus:ring-blue-500 transition duration-300"
             >
               <Icon className="w-5 h-5" />
               <span className="hidden sm:block">{label}</span>
+              <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-1 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {label}
+              </span>
             </button>
+            </div>
           ))}
 
-          <button className="flex gap-2 items-center px-2 py-1 text-red-600 rounded-md hover:bg-red-100 active:bg-red-200 focus:ring-2 focus:ring-red-500 transition duration-300">
+        <div className="relative group">
+        <button className="flex gap-2 items-center px-2 py-1 text-red-600 rounded-md hover:bg-red-100 active:bg-red-200 focus:ring-2 focus:ring-red-500 transition duration-300">
             <Trash className="w-5 h-5" />
             <span className="hidden sm:block">Delete</span>
+            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 translate-y-1 bg-black text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Delete
+            </span>
           </button>
+          </div>
+
+          
 
           <div className="h-full flex items-center gap-2">
             <div onClick={toggleChevron} className="flex items-center justify-center">
@@ -108,7 +121,13 @@ const Content = () => {
       </div>
 
       {activeComponent === 'Panel' && <Panel />}
-      {activeComponent === 'RibbonChart' && <RibbonChart />}
+      <div className="flex flex-col xl:flex-row gap-4 w-full">
+     
+      {activeComponent === "RibbonChart" && <RibbonChart />}
+
+     
+      {activeComponent === "RibbonChart" && <BarChart />}
+    </div>
       <PanelTable />
     </div>
   );
