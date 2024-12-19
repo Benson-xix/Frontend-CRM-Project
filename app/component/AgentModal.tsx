@@ -1,4 +1,4 @@
-import { ChevronUp, Copy, FileText, History, List, Menu, User, X } from "lucide-react";
+import { ChevronUp, Copy, FileText, History, Menu, User, X } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import EmailInputWithAvatar from "./EmailInputWithAvatar";
