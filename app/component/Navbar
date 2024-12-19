@@ -1,132 +1,366 @@
-import { BookKey, Box, Building2, ChevronDown, ClipboardPen, Code, FoldVertical, History, House, Layers, Megaphone, Menu, NotebookTabs, Phone, Pin, ReceiptText, Rocket, ScrollText, User, Users } from 'lucide-react'
-import Link from 'next/link'
-import React from 'react'
+"use client"
+import { SetStateAction, useState } from "react";
+import { 
+  BookKey, Box, Building2, ChevronDown, ChevronUp, ClipboardPen, Code, FoldVertical, 
+  History, House, Layers, Megaphone, Menu, NotebookTabs, Phone, Pin, 
+  ReceiptText, Rocket, ScrollText, User, Users 
+} from "lucide-react";
+import Link from "next/link";
+import AgentModal from "./AgentModal";
 
 const NavBar = () => {
+  const [menuOpen, setMenuOpen] = useState(true);
+  const [activeNav, setActiveNav] = useState("Leads");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+
+
+  const handleNavClick = (name: SetStateAction<string>) => {
+    setActiveNav(name);
+
+    if (name === "Agent Skill") {
+      setIsModalOpen(true); 
+    } else {
+      setIsModalOpen(false); 
+    }
+  };
+
+  const closeModal = () => setIsModalOpen(false);
+
   return (
-    <div className='w-[10%] h-full flex flex-col py-2 px-3 bg-[#EFEFEF] gap-2'>
-      <Menu className='text-gray-600'/>
-<div className=' flex flex-col gap-5 w-full'>
-        <div className=' grid grid-cols-1 w-full gap-3  '>
-        <div className='flex flex-row gap-4 '>
-        <House className='text-gray-600 ' />
-        <h2 className='text-gray-600 font-medium'>Home</h2>
-        </div>
+    <div className="xl:w-[10%]   h-full flex flex-col bg-[#EFEFEF] text-xs text-gray-600 py-2 px-3 transition-all duration-300 ">
+      <div 
+        className="xl:flex hidden items-center cursor-pointer hover:bg-gray-200 p-2 transition-all duration-300"
+        onClick={toggleMenu}
+      >
+        <Menu className="text-gray-600 w-4 h-4" />
+      </div>
+      {menuOpen && (
+        <div className="xl:flex  hidden flex-col gap-2 w-full">    
+          <div 
+            className={`flex items-center gap-4 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+              activeNav === "Home" ? "bg-white text-gray-600 border-l-4 border-[#00102A]" : ""
+            }`} 
+            onClick={() => handleNavClick("Home")}
+          >
+            <House className="text-inherit w-4 h-4" />
+            <Link href="#" className="font-medium">Home</Link>
+          </div>
 
-        <div className='flex flex-row justify-between '> 
-        <div className='flex flex-row gap-4 justify-start'>
-        <History className='text-gray-600 ' />
-        <Link href="/recent" className='text-gray-600 font-medium'>Recent</Link>
-        </div >
-        <ChevronDown  className='justify-end text-gray-600 '/>
-        </div>
+            <div 
+            className={`flex items-center gap-2 justify-between cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+              activeNav === "Recent" ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+            }`} 
+            onClick={() => handleNavClick("Recent")}
+          >
+            <div className="flex items-center gap-2">
+              <History className="text-inherit w-4 h-4" />
+              <Link href="#" className="font-medium">Recent</Link>
+            </div>
+            {activeNav === "Recent" ? (
+              <ChevronUp className="text-inherit w-4 h-4" />  
+            ) : (
+              <ChevronDown className="text-inherit w-4 h-4" /> 
+            )}
+          </div>
 
-        <div className='flex flex-row justify-between '> 
-        <div className='flex flex-row gap-4 justify-start'>
-        <Pin  className='text-gray-600 ' />
-        <Link href="/recent" className='text-gray-600 font-medium'>Pinned</Link>
-        </div >
-        <ChevronDown  className='justify-end text-gray-600 '/>
+          <div 
+            className={`flex items-center gap-2 justify-between cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+              activeNav === "Pinned" ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+            }`} 
+            onClick={() => handleNavClick("Pinned")}
+          >
+            <div className="flex items-center gap-2">
+              <Pin className="text-inherit w-4 h-4" />
+              <Link href="#" className="font-medium">Pinned</Link>
+            </div>
+            {activeNav === "Pinned" ? (
+              <ChevronUp className="text-inherit w-4 h-4" />  
+            ) : (
+              <ChevronDown className="text-inherit w-4 h-4" />  
+            )}
+          </div>
+
+          <h2 className="text-gray-600 font-semibold">My Work</h2>
+          {[ 
+            { name: "Sales accelerator", icon: <Rocket className="w-4 h-4 text-inherit" /> },
+            { name: "Dashboards", icon: <FoldVertical className="w-4 h-4 text-inherit" /> },
+            { name: "Activites", icon: <ClipboardPen className="w-4 h-4 text-inherit" /> },
+          ].map((item) => (
+            <div
+              key={item.name}
+              className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+                activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+              }`}
+              onClick={() => handleNavClick(item.name)}
+            >
+              {item.icon}
+              <Link href="#" className="font-medium">{item.name}</Link>
+            </div>
+          ))}
+
+          <h2 className="text-gray-600 font-semibold">Customers</h2>
+          {[ 
+        { name: "Accounts", icon: <Layers className="text-inherit w-4 h-4" /> },
+        { name: "Contact", icon: <User className="text-inherit w-4 h-4" /> },
+        { name: "Agent Skill", icon: <User className="text-inherit w-4 h-4" /> }
+      ].map((item) => (
+        <div
+          key={item.name}
+          className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+            activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+          }`}
+          onClick={() => handleNavClick(item.name)}
+        >
+          {item.icon}
+          <Link href="#" className="font-medium">{item.name}</Link>
         </div>
+      ))}
+          <h2 className="text-gray-600 font-semibold">Sales</h2>
+          {[ 
+            { name: "Leads", icon: <Phone className="text-inherit w-4 h-4" /> },
+            { name: "Opportunities", icon: <NotebookTabs className="text-inherit w-4 h-4" /> },
+            { name: "Competitors", icon: <Users className="text-inherit w-4 h-4" /> }
+          ].map((item) => (
+            <div
+              key={item.name}
+              className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+                activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+              }`}
+              onClick={() => handleNavClick(item.name)}
+            >
+              {item.icon}
+              <Link href="#" className="font-medium">{item.name}</Link>
+            </div>
+          ))}
+
+          <h2 className="text-gray-600 font-semibold">Collateral</h2>
+          {[ 
+            { name: "Quotes", icon: <BookKey className="text-inherit w-4 h-4" /> },
+            { name: "Orders", icon: <ScrollText className="text-inherit w-4 h-4" /> },
+            { name: "Invoices", icon: <ReceiptText className="text-inherit w-4 h-4" /> },
+            { name: "Products", icon: <Box className="text-inherit w-4 h-4" /> },
+            { name: "Sales Literature", icon: <Building2 className="text-inherit w-4 h-4" /> }
+          ].map((item) => (
+            <div
+              key={item.name}
+              className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+                activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+              }`}
+              onClick={() => handleNavClick(item.name)}
+            >
+              {item.icon}
+              <Link href="#" className="font-medium">{item.name}</Link>
+            </div>
+          ))}
+
+          <h2 className="text-gray-600 font-semibold">Marketing</h2>
+          {[ 
+            { name: "Marketing lists", icon: <Megaphone className="text-inherit w-4 h-4" /> },
+            { name: "Quick Campaigns", icon: <Megaphone className="text-inherit w-4 h-4" /> }
+          ].map((item) => (
+            <div
+              key={item.name}
+              className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+                activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+              }`}
+              onClick={() => handleNavClick(item.name)}
+            >
+              {item.icon}
+              <Link href="#" className="font-medium">{item.name}</Link>
+            </div>
+          ))}
+
+        <h2 className="text-gray-600 font-semibold">Performance</h2>
+          <div 
+            className={`flex items-center gap-2 justify-between cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+              activeNav === "Sales" ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+            }`} 
+            onClick={() => handleNavClick("Sales")}
+          >
+            <div className="flex items-center gap-2">
+              <div className='bg-purple-600 text-gray-200 w-[30px] h-[30px] flex justify-center items-center'>S</div>
+              <Link href="#" className="font-medium">Sales</Link>
+            </div>
+            <Code className="text-inherit w-4 h-4" />
+          </div>
+        </div>
+      )}
 
 
-        </div>
-
-        <div  className=' grid grid-cols-1 w-full gap-3 '>
-        <h2 className='text-gray-600'>My Work</h2>
-        <div className='flex flex-row gap-4'>
-        <Rocket  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Sales accelerator</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <FoldVertical  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Dashboard</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <ClipboardPen  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Activites</h2>
-        </div>
-        </div>
-
-        <div  className=' grid grid-cols-1 w-full gap-3 '>
-        <h2 className='text-gray-600'>Customers</h2>
-        <div className='flex flex-row gap-4'>
-        <Layers  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Accounts</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <User  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Contact</h2>
-        </div>
-        </div>
-
-        <div  className=' grid grid-cols-1 w-full gap-3 '>
-        <h2 className='text-gray-600'>Sales</h2>
-        <div className='flex flex-row gap-4  active:bg-white '>
-        <Phone  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Leads</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <NotebookTabs  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Opportunites</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <Users  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Competitors</h2>
-        </div>
-        </div>
-
-        <div  className=' grid grid-cols-1 w-full gap-3 '>
-        <h2 className='text-gray-600'>Collateral</h2>
-        <div className='flex flex-row gap-4  active:bg-white '>
-        <BookKey  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Qoutes</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <ScrollText  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Orders</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <ReceiptText  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Invoices</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <Box  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Products</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <Building2  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Sales Literature</h2>
-        </div>
-        </div>
-
-        <div  className=' grid grid-cols-1 w-full gap-3 '>
-        <h2 className='text-gray-600'>Marketing</h2>
-        <div className='flex flex-row gap-4'>
-        <Megaphone  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Marketing lists</h2>
-        </div>
-        <div className='flex flex-row gap-4'>
-        <Megaphone  className='text-gray-600 ' />
-        <h2 className='text-gray-600 text-sm font-medium'>Quick Campaings</h2>
-        </div>
-        </div>
-
-
-        <div  className=' grid grid-cols-1 w-full gap-3 '>
-        <h2 className='text-gray-600'>Performance</h2>
-        <div className='flex flex-row justify-between '> 
-        <div className='flex flex-row gap-4 justify-start'>
-        <div className='bg-purple-600 text-gray-200 w-[30px] h-[30px] flex justify-center items-center'>S</div>
-        <Link href="/recent" className='text-gray-600 font-medium'>Sales</Link>
-        </div >
-        <Code  className='justify-end text-gray-600 '/>
-        </div>
-
-        </div>
-</div>
+   <div className="xl:hidden  w-full relative">
+   <div className="flex items-center cursor-pointer hover:bg-gray-200 p-2 transition-all duration-300" onClick={toggleMobileMenu}>
+        <Menu className="text-gray-600 w-4 h-4" />
     </div>
-  )
-}
+   <div className=" bg-gray-200 z-50   px-2 ">
+    
+    <div className={`  grid  grid-cols-3 gap-2  w-full ${mobileMenuOpen ? 'grid' : 'hidden'} xl:hidden`}>
+        <div 
+          className={`flex items-center gap-4 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${activeNav === "Home" ? "bg-white text-gray-600 border-l-4 border-[#00102A]" : ""}`} 
+          onClick={() => handleNavClick("Home")}
+        >
+          <House className="text-inherit w-4 h-4" />
+          <Link href="#" className="font-medium">Home</Link>
+        </div>
 
-export default NavBar
+       
+        <div 
+          className={`flex items-center gap-2 justify-between cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${activeNav === "Recent" ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""}`} 
+          onClick={() => handleNavClick("Recent")}
+        >
+          <div className="flex items-center gap-2">
+            <History className="text-inherit w-4 h-4" />
+            <Link href="#" className="font-medium">Recent</Link>
+          </div>
+          {activeNav === "Recent" ? <ChevronUp className="text-inherit w-4 h-4" /> : <ChevronDown className="text-inherit w-4 h-4" />}
+        </div>
+
+        <div 
+          className={`flex items-center gap-2 justify-between cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${activeNav === "Pinned" ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""}`} 
+          onClick={() => handleNavClick("Pinned")}
+        >
+          <div className="flex items-center gap-2">
+            <Pin className="text-inherit w-4 h-4" />
+            <Link href="#" className="font-medium">Pinned</Link>
+          </div>
+          {activeNav === "Pinned" ? <ChevronUp className="text-inherit w-4 h-4" /> : <ChevronDown className="text-inherit w-4 h-4" />}
+        </div>
+
+       
+     <div>
+     <h2 className="text-gray-900 font-semibold">My Work</h2>
+        {[ 
+          { name: "Sales accelerator", icon: <Rocket className="w-4 h-4 md:flex hidden text-inherit" /> },
+          { name: "Dashboards", icon: <FoldVertical className="w-4 h-4  md:flex hidden text-inherit" /> },
+          { name: "Activites", icon: <ClipboardPen className="w-4 h-4  md:flex hidden text-inherit" /> },
+        ].map((item) => (
+          <div
+            key={item.name}
+            className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""}`}
+            onClick={() => handleNavClick(item.name)}
+          >
+            {item.icon}
+            <Link href="#" className="font-medium">{item.name}</Link>
+          </div>
+        ))}
+     </div>
+
+        
+      <div>
+      <h2 className="text-gray-900 font-semibold">Customers</h2>
+          {[ 
+        { name: "Accounts", icon: <Layers className="text-inherit md:flex hidden w-4 h-4" /> },
+        { name: "Contact", icon: <User className="text-inherit md:flex hidden w-4 h-4" /> },
+        { name: "Agent Skill", icon: <User className="text-inherit md:flex hidden w-4 h-4" /> }
+      ].map((item) => (
+        <div
+          key={item.name}
+          className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+            activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+          }`}
+          onClick={() => handleNavClick(item.name)}
+        >
+          {item.icon}
+          <Link href="#" className="font-medium">{item.name}</Link>
+        </div>
+      ))}
+      </div>
+
+
+      <div>
+      <h2 className="text-gray-900 font-semibold">Sales</h2>
+          {[ 
+            { name: "Leads", icon: <Phone className="text-inherit w-4 h-4 md:flex hidden" /> },
+            { name: "Opportunities", icon: <NotebookTabs className="text-inherit md:flex hidden w-4 h-4" /> },
+            { name: "Competitors", icon: <Users className="text-inherit md:flex hidden w-4 h-4" /> }
+          ].map((item) => (
+            <div
+              key={item.name}
+              className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+                activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+              }`}
+              onClick={() => handleNavClick(item.name)}
+            >
+              {item.icon}
+              <Link href="#" className="font-medium">{item.name}</Link>
+            </div>
+          ))}
+      </div>
+
+      <div>
+        <h2 className="text-gray-900 font-semibold">Collateral</h2>
+          {[ 
+            { name: "Quotes", icon: <BookKey className="text-inherit w-4 h-4 md:flex hidden" /> },
+            { name: "Orders", icon: <ScrollText className="text-inherit w-4 h-4 md:flex hidden" /> },
+            { name: "Invoices", icon: <ReceiptText className="text-inherit w-4 h-4 md:flex hidden" /> },
+            { name: "Products", icon: <Box className="text-inherit w-4 h-4 md:flex hidden" /> },
+            { name: "Sales Literature", icon: <Building2 className="text-inherit w-4 h-4 md:flex hidden" /> }
+          ].map((item) => (
+            <div
+              key={item.name}
+              className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+                activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+              }`}
+              onClick={() => handleNavClick(item.name)}
+            >
+              {item.icon}
+              <Link href="#" className="font-medium">{item.name}</Link>
+            </div>
+          ))}
+        </div>
+
+         <div>
+         <h2 className="text-gray-900 font-semibold">Marketing</h2>
+          {[ 
+            { name: "Marketing lists", icon: <Megaphone className="text-inherit w-4 h-4 md:flex hidden" /> },
+            { name: "Quick Campaigns", icon: <Megaphone className="text-inherit w-4 h-4 md:flex hidden" /> }
+          ].map((item) => (
+            <div
+              key={item.name}
+              className={`flex items-center gap-2 cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+                activeNav === item.name ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+              }`}
+              onClick={() => handleNavClick(item.name)}
+            >
+              {item.icon}
+              <Link href="#" className="font-medium">{item.name}</Link>
+            </div>
+          ))}
+
+         </div>
+         
+        <div>
+        <h2 className="text-gray-900 font-semibold">Performance</h2>
+          <div 
+            className={`flex items-center gap-2 justify-between cursor-pointer hover:text-gray-800 hover:bg-gray-200 p-2 rounded-md transition-all duration-300 ${
+              activeNav === "Sales" ? "bg-white text-gray-900 border-l-4 border-[#00102A]" : ""
+            }`} 
+            onClick={() => handleNavClick("Sales")}
+          >
+            <div className="flex items-center gap-2">
+              <div className='bg-purple-600 text-gray-200 w-[30px] h-[30px] flex justify-center items-center'>S</div>
+              <Link href="#" className="font-medium">Sales</Link>
+            </div>
+            <Code className="text-inherit w-4 h-4" />
+          </div>
+        </div>
+
+      </div>
+     </div>
+   </div>
+
+{isModalOpen && <AgentModal closeModal={closeModal} />}
+    </div>
+  );
+};
+
+export default NavBar;
