@@ -36,7 +36,7 @@ const PanelTable = () => {
     <div className="p-4 text-gray-600 border-2 rounded-md shadow-md">
      
       <div className="mb-4">
-        <div className="relative w-1/3">
+<div className="relative lg:w-1/3 md:w-1/2 w-full">
           <input
             type="text"
             placeholder="Sort, filter and search with copilot"
